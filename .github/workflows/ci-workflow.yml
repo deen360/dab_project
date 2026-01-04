@@ -37,12 +37,12 @@ jobs:
       # Step 4: Run tests, generate coverage report and HTML test report
       - name: Run pytest & generate HTML report
         run: |
-          pytest tests/ \
+          pytest \
             --disable-warnings \
-            --cov=./src \                                # Measure coverage for ./src
-            --cov-report=html \                          # Output coverage HTML in htmlcov/
-            --html=pytest_report.html \                  # Generate pytest HTML report
-            --self-contained-html                        # Make HTML report standalone for upload
+            --cov=./src \
+            --cov-report=html \
+            --html=pytest_report.html \
+            --self-contained-html
 
       # Step 5: Upload coverage HTML report as an artifact
       # This allows you to download the htmlcov/ folder from the Actions UI
